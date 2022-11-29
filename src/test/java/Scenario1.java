@@ -7,19 +7,19 @@ import org.testng.annotations.Test;
 public class Scenario1 extends test.TestBase {
 
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void TypeInSearchBar() throws Exception {
         HomePage HomeObject=new HomePage(driver);
         HomeObject.SearchForCars();
 
     }
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void SelectFirstOption() throws Exception {
         Options OptionObject =new Options(driver);
         OptionObject.SelectFirstOption();
 
     }
-    @Test(priority = 3)
+    @Test(priority = 4)
     public void AddToList() throws Exception {
         AddToList AddToListObject =new AddToList(driver);
         AddToListObject.AddTheSelectedItemToList();
@@ -28,7 +28,7 @@ public class Scenario1 extends test.TestBase {
         Assert.assertEquals(new AddToList(driver).getNameInProductDetailsPage(),new AddToList(driver).getNameInDetailsPage());
 
     }
-    @Test(priority = 0)
+    @Test(priority = 1)
     public void SignIn() throws Exception {
         SignIn SignInObject =new SignIn(driver);
         SignInObject.HoverToSignIn();
