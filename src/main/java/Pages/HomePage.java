@@ -10,14 +10,12 @@ public class HomePage extends PageBase {
     WebDriver driver;
     WebElement NextBtnElement;
     WebDriverWait wait;
+    Extractor ext;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
         jSExecutor = (JavascriptExecutor) driver;
     }
-
-    Extractor ext;
-
 
     public void SearchForCars() throws Exception {
         ext = new Extractor();
@@ -28,27 +26,11 @@ public class HomePage extends PageBase {
         jSExecutor.executeScript("arguments[0].click();", SearchBarElement);
         SetTextElementTxt(SearchBarElement, "car accessories");
         SearchBarElement.sendKeys(Keys.ENTER);
-       /*String CarAccessoriesString=ext.Locaters(0,2);
-       WebElement CarAccessoriesElement=this.driver.findElement(By.xpath(CarAccessoriesString));
-       wait.until(ExpectedConditions.elementToBeClickable(CarAccessoriesElement));
-       jSExecutor.executeScript("arguments[0].click();", CarAccessoriesElement);*/
-        // Select CarAccessoriesElement = new Select(driver.findElement(By.xpath(CarAccessoriesString)));
-        //CarAccessoriesElement.selectByIndex(1);
 
-       /* try {
-            WebElement CarAccessoriesElement=this.driver.findElement(By.xpath(CarAccessoriesString));
-            wait.until(ExpectedConditions.elementToBeClickable(CarAccessoriesElement));
-            jSExecutor.executeScript("arguments[0].click();", CarAccessoriesElement);
-        } catch(StaleElementReferenceException e) {
-        }*/
     }
 
     public void OpenTodayDeals() throws Exception {
         ext = new Extractor();
-        //WebDriverWait wait = new WebDriverWait(driver, 50);
-       /* String DontChangeString = ext.Locaters(0, 19);
-        WebElement DontChangeBtnElement = this.driver.findElement(By.xpath(DontChangeString));
-        ClickBtn(DontChangeBtnElement);*/
 
         String TodayDealsString = ext.Locaters(0, 18);
         WebElement TodayDealsElement = this.driver.findElement(By.xpath(TodayDealsString));
@@ -90,13 +72,10 @@ public class HomePage extends PageBase {
         String ThirdPageLocator = ext.Locaters(0, 23);
         WebElement ThirdPageElement = this.driver.findElement(By.xpath(ThirdPageLocator));
         ClickBtn(ThirdPageElement);
-        //wait = new WebDriverWait(driver, 100);
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
         ScrollToNextElement();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //wait = new WebDriverWait(driver, 100);
         String ForthPageLocator = ext.Locaters(0, 25);
         WebElement ForthPageElement = this.driver.findElement(By.xpath(ForthPageLocator));
         ClickBtn(ForthPageElement);

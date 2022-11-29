@@ -36,11 +36,6 @@ public class AddToList extends PageBase {
         return NameOfProductInDetails;
     }
 
-    public String getNameInCartPage() {
-
-        return NameOfProductInCart;
-    }
-
 
     public void AddTheSelectedItemToList() throws Exception {
         ext = new Extractor();
@@ -48,7 +43,6 @@ public class AddToList extends PageBase {
         String AddToListString = ext.Locaters(0, 5);
         WebElement AddToListElement = this.driver.findElement(By.xpath(AddToListString));
 
-        //wait = new WebDriverWait(driver, 50);
         String AddToCartLocator = ext.Locaters(0, 29);
         try {
             WebElement AddToCartElement = this.driver.findElement(By.xpath(AddToCartLocator));
@@ -68,10 +62,8 @@ public class AddToList extends PageBase {
                 String NameOfProductInCartLocator = ext.Locaters(0, 31);
                 WebElement NameOfProductInCartElement = this.driver.findElement(By.xpath(NameOfProductInCartLocator));
                 NameOfProductInCart = NameOfProductInCartElement.getText();
-                System.out.println("7");
                 System.out.println(NameOfProductInDetails);
                 System.out.println(NameOfProductInCart);
-                System.out.println("5");
                 wait = new WebDriverWait(driver, 60);
 
 
@@ -95,29 +87,13 @@ public class AddToList extends PageBase {
             }
 
 
-
-
-            /*if (NameOfProductInDetails.contains(NameOfProductInCart)) {
-                return true;
-
-            }*/
         } catch (Exception e) {
 
         }
 
-        //  }
-
-
-
-           /* if (NameInDetailsPage.contains(NameInViewListPage)) {
-                return true;
-            }*/
-
-
-
     }
 
-    }
+}
 
 
 

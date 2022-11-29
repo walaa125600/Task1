@@ -35,23 +35,9 @@ public class AddToCartScenario2 extends PageBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", allProducts.get(randomProduct));
 
-        //  boolean staleElement = true;
-       /* while(staleElement)
-        {
-            try
-            {
-                Thread.sleep(1000);
-                allProducts.get(randomProduct).click();
-                staleElement = false;
-            }
-            catch(StaleElementReferenceException e)
-            {
-                staleElement = true;
-            }
-        }*/
+
         allProducts.get(randomProduct).click();
         System.out.println(allProducts.get(randomProduct));
-        // ClickBtn( allProducts.get(randomProduct));
 
 
     }
@@ -59,17 +45,7 @@ public class AddToCartScenario2 extends PageBase {
 
     public void AddToList() throws Exception {
         ext = new Extractor();
-       /* String AddToListLocator= ext.Locaters(0,27);
-        By AddToList = By.xpath(AddToListLocator);
-        WebElement AddToListElement= this.driver.findElement(AddToList);*/
 
-       // wait = new WebDriverWait(driver, 50);
-        /*String AddToCartLocator= ext.Locaters(0,14);
-        By AddToCart = By.className(AddToCartLocator);
-        WebElement AddToCartElement= this.driver.findElement(AddToCart);*/
-
-       // driver.navigate().refresh();
-        //wait = new WebDriverWait(driver, 50);
 
         String AddToListLocator = ext.Locaters(0, 5);
 
@@ -77,7 +53,7 @@ public class AddToCartScenario2 extends PageBase {
         By AddToList = By.xpath(AddToListLocator);
         WebElement AddToListElement = this.driver.findElement(AddToList);
         String AddToCartLocator = ext.Locaters(0, 14);
-    // wait = new WebDriverWait(driver, 50);
+
 
 try {
     By AddToCart = By.xpath(AddToCartLocator);
@@ -86,18 +62,11 @@ try {
 
         wait = new WebDriverWait(driver, 100);
         ClickBtn(AddToCartElement);
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-       // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", AddToCartElement);
-        //WebDriverWait wait = new WebDriverWait(driver, 50);
-       // wait.until(ExpectedConditions.elementToBeClickable(AddToCartElement));
-       // jSExecutor.executeScript("arguments[0].click();", AddToCartElement);
 
-        System.out.println("7");
-
-    }  else if (AddToListElement.isDisplayed()) {
+    }
+    else if (AddToListElement.isDisplayed()) {
         wait = new WebDriverWait(driver, 100);
         ClickBtn(AddToListElement);
-        System.out.println("10");
 
     }
 

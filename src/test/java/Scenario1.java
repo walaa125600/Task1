@@ -17,7 +17,6 @@ public class Scenario1 extends test.TestBase {
     public void SelectFirstOption() throws Exception {
         Options OptionObject =new Options(driver);
         OptionObject.SelectFirstOption();
-        //OptionObject.selectRandomProduct();
 
     }
     @Test(priority = 3)
@@ -25,18 +24,15 @@ public class Scenario1 extends test.TestBase {
         AddToList AddToListObject =new AddToList(driver);
         AddToListObject.AddTheSelectedItemToList();
 
-        //Assert.assertTrue(new AddToList(driver).AddTheSelectedItemToList());
         Assert.assertEquals(new AddToList(driver).getNameInViewListPage(),new AddToList(driver).getNameInDetailsPage());
-        System.out.println("10");
         Assert.assertEquals(new AddToList(driver).getNameInProductDetailsPage(),new AddToList(driver).getNameInDetailsPage());
-        //System.out.println("20");
 
     }
     @Test(priority = 0)
     public void SignIn() throws Exception {
         SignIn SignInObject =new SignIn(driver);
         SignInObject.HoverToSignIn();
-        SignInObject.SignIn();
+        SignInObject.Sign_In();
         SignInObject.SignInToAmazonAccount();
 
     }
